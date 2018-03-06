@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#eee">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand logo" >
+				<img src="img/logo.png" alt="" style="height: 50px;">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle='collapse' data-target='#navbar-collapse'>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="blog.html" class="glyphicon glyphicon-home"> Home</a></li>
+				<li><a href="information.html" class="glyphicon glyphicon-list"> About</a></li>
+				<li class="active"><a href="case.html" class="glyphicon glyphicon-fire"> Blog</a></li>
+				<li><a href="about.html" class="glyphicon glyphicon-question-sign"> Content</a></li>
+			</ul>
+			</div>
+			
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<div class="container">
+			<hgroup>
+				<h1>Blog</h1>
+				<h4>我的个人博客</h4>
+			</hgroup>
+		</div>
+	</div>
+	<div class="search">
+		<img src="img/searchimg.jpg" alt="" class="img-responsive">
+		<div class="input-group input-group-lg">
+			<input type="text" class="form-control" placeholder="search...">
+			<span class="input-group-btn">
+			<button class="btn btn-primary">search</button>
+			</span>
+		</div>
+	</div>
+    <section>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8">
+    				<h3>深入理解JavaScript，这一篇就够了</h3>
+    				<img src="img/js.jpg" alt="" class="img-responsive">
+    				<article class="bothclass">
+    					前言
+　　JavaScript 是我接触到的第二门编程语言，第一门是 C 语言。然后才是 C++、Java 还有其它一些什么。所以我对 JavaScript 是非常有感情的，毕竟使用它有十多年了。早就想写一篇关于 JavaScript 方面的东西，但是在博客园中，写 JavaScript 的文章是最多的，从入门的学习笔记到高手的心得体会一应俱全，不管我怎么写，都难免落入俗套，所以迟迟没有动笔。另外一个原因，也是因为在 Ubuntu 环境中一直没有找到很好的 JavaScript 开发工具，这种困境直到 Node.js 和 Visual Studio Code 的出现才完全解除。
+
+　　十多年前，对 JavaScript 的介绍都是说他是基于对象的编程语言，而从没有哪本书会说 JavaScript 是一门面向对象的编程语言。基于对象很好理解，毕竟在 JavaScript 中一切都是对象，我们随时可以使用点号操作符来调用某个对象的方法。但是十多年前，我们编写 JavaScript 程序时，都是像 C 语言那样使用函数来组织我们的程序的，只有在论坛的某个角落中，有少数的高手会偶尔提到你可以通过修改某个对象的prototype来让你的函数达到更高层次的复用，直到 Flash 的 ActionScript 出现时，才有人系统介绍基于原型的继承。十余年后的现在，使用 JavaScript 的原型链和闭包来模拟经典的面向对象程序设计已经是广为流传的方案，所以，说 JavaScript 是一门面向对象的编程语言也丝毫不为过。
+
+　　我喜欢 JavaScript，是因为它非常具有表现力，你可以在其中发挥你的想象力来组织各种不可思议的程序写法。也许 JavaScript 语言并不完美，它有很多缺陷和陷阱，而正是这些很有特色的语言特性，让 JavaScript 的世界出现了很多奇技淫巧。
+    				</article>
+    				<article class="ownclass">
+    					对象和原型链
+　　JavaScript 是一门基于对象的编程语言，在 JavaScript 中一切都是对象，包括函数，也是被当成第一等的对象对待，这正是 JavaScript 极其富有表现力的原因。在 JavaScript 中，创建一个对象可以这么写：
+
+var someThing = new Object();
+　　这和在其它面向对象的语言中使用某个类的构造函数创建一个对象是一模一样的。但是在 JavaScript 中，这不是最推荐的写法，使用对象字面量来定义一个对象更简洁，如下：
+
+var anotherThing = {};
+　　这两个语句其本质是一样的，都是生成一个空对象。对象字面量也可以用来写数组以及更加复杂的对象，这样：
+
+var weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+　　这样：
+
+var person = {
+    name : "youxia",
+    age : 30,
+    gender : "male",
+    sayHello : function(){ return "Hello, my name is " + this.name; }
+}
+    				</article>
+    				<article class="bothclass">
+    					和其它的面向对象编程语言不同， JavaScript 不是基于类的代码复用体系，它选择了一种很奇特的基于原型的代码复用机制。通俗点说，如果你想创建很多对象，而这些对象有某些相同的属性和行为，你为每一个对象编写单独的代码肯定是不合算的。在其它的面向对象编程语言中，你可以先设计一个类，然后再以这个类为模板来创建对象。我这里称这种方式为经典的面向对象体系。而在 JavaScript 中，解决这个问题的方式是把一个对象作为另外一个对象的原型，拥有相同原型的对象自然拥有了相同的属性和行为。对象拥有原型，原型又有原型的原型，最终构成一个原型链。当访问一个对象的属性或方法的时候，先在对象本身中查找，如果找不到，则到原型中查找，如果还是找不到，则进一步在原型的原型中查找，一直到原型链的最末端。在现代 JavaScript 模式中，硬是用函数、闭包和原型链模拟了经典的面向对象体系。
+    				</article>
+    				<ul class="label1">
+    					<li><span class="glyphicon glyphicon-tag"></span> HTML5</li>
+    					<li><span class="glyphicon glyphicon-qrcode"></span> SCAN</li>
+    					<li><span class="glyphicon glyphicon-map-marker"></span> LOCAL</li>
+    					<li><span class="glyphicon glyphicon-arrow-down"></span> DOWNLOAD</li>
+    				</ul>
+    				<hr>
+    			</div>
+    			<div class="col-md-4 col-right">
+    				<h3><b>作用域链、上下文环境和闭包</b></h3>
+    				<img src="img/jsright.jpg" alt="" class="img-responsive">
+    				<article class="artright">
+    					内层代码可以访问外层变量，所以内层代码在访问一个变量的时候，会从内层到外层逐层搜索该变量，这就是变量作用域链，理解这一点有时有助于我们优化 JavaScript 代码的执行速度，对变量的搜索的路径越短，代码执行就越快。另外，除了全局变量外，定义在函数内部的变量只有在函数执行的时候后，这个变量才会被创建，这就是执行上下文，装逼说法叫 context，每一个函数执行的时候就会创建一个 context。前面提过，在 C 语言中，一个代码块退出的时候，这个代码块的 context 和里面的变量也会被销毁，但是在 JavaScript 函数执行结束后，函数的 context 和里面的变量会被销毁吗？那可不一定哦。如果一个函数中定义的变量被捕获，那么这个函数的 context 和里面的变量就会保留，比如闭包。这个不叫坑，叫语言特性。
+    				</article>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+	<div id="case">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest1.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject1</p>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest2.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject2</p>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest3.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject3</p>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest4.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject4</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest5.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject5</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest6.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject6</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest7.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject7</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+					<div class="false">
+						<img src="img/latest8.jpg" alt="" class="img-responsive">
+						<div class="caption">
+							
+							<p>Poject8</p>
+						</div>
+					</div>
+				</div>
+				<nav>
+				  <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="active"><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li class="disabled">
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<footer id="footer">
+	<div class="container">
+		<p>Design By Jason</p>
+		<p>Power By Bootstrap</p>
+	</div>
+</footer>
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	
+
+</script>
+</html>

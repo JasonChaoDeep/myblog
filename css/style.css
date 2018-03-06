@@ -1,0 +1,416 @@
+@charset 'utf-8';
+*{
+	margin: 0;
+	padding: 0;
+}
+#myCarousel{
+	margin: 50px 0 0 0;
+}
+.navbar-header img{
+	padding: 10px;
+}
+.logo{
+	padding: 0;
+}
+.carousel ol li{
+	list-style-type: decimal;
+	display: inline-block;
+	width: 18px;
+	height: 10px;
+	background: black;
+	border-radius: 0;
+	border: 1px solid transparent;
+}
+.carousel ol li.active{
+	list-style-type: decimal;
+	display: inline-block;
+	width: 18px;
+	height: 10px;
+	background: orange;
+	border-radius: 0;
+	border: 1px solid transparent;
+	padding: 0 8px;
+	margin: 0 8px;
+}
+/* .carousel img{
+	position: relative;
+}
+.carousel .innertext{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.7);
+	bottom: 50px;
+	left: 40.3%;
+	color: white;
+
+} */
+.innertext h3,.innertext p{
+	padding: 20px;
+	text-align: left;
+}
+#navbar-collapse ul{
+	margin-top: 0
+}
+.demo-hover{
+    background: #ccc;
+    height: 40px;
+    margin: 50px 0 10px 0;
+
+}
+.demo-ul li{
+        padding: 0 10px;
+        width: 100px;
+        position: relative;
+    }
+    .demo-ul li a{
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: black;
+    }
+    .demo-ul li ul{
+        position: absolute;
+        width: 100%;
+        top: 40px;
+        left: 0;
+        transform: scaleY(0);
+       opacity: 0;
+        overflow: hidden;
+    }
+    .ul-transition ul{
+        transform-origin: 0 0;
+        transition: all .5s;
+    }
+    .demo-ul li:hover ul{
+        transform: scaleY(1);
+       opacity: 1;
+    }
+    .demo-ul li ul li{
+        float: none;
+        background: #999;
+
+}
+.fllil>li{
+	list-style: none;
+	float: left;
+}
+.fllil>li>ul{
+	list-style: none;
+}
+.carousel-inner{
+	z-index: -100;
+}
+.carousel-inner img{
+	margin: 0 auto;
+}
+.carousel-control{
+	font-size: 100px
+}
+.tab-h2{
+	font-size: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #0059b2;
+}
+.tab-p{
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #999;
+}
+.tab1{
+	margin: 30px 0;
+	color: #666;
+}
+.media-left img{
+	width: 100px;
+	height: 100px;
+	transition: all 0.5s;
+}
+.media-left img:hover{
+	opacity: 0.5;
+}
+.tab1 .col{
+	padding: 20px;
+}
+#footer{
+	background: #666;
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	color: #eee;
+}
+.tab2 img{
+	width: 65%;
+	height: 65%;
+}
+.tab3 img{
+	width: 65%;
+	height: 65%;
+}
+.tab2{
+	background: #eee;
+	padding: 60px;
+	text-align: center;
+}
+.tab3{
+	padding: 40px 0;
+	text-align: center;
+}
+
+.tab4 .round{
+	width:260px;
+	height: 260px;
+	margin: 40px 10px;
+	background: #ccc;
+	position: relative;
+
+}
+.tab4 .round:hover{
+	background: #bf1853;
+	color: white;
+}
+.tab4 .round:hover img{
+	transform: rotate(360deg);
+
+}
+.tab4 .round img{
+	position: absolute;
+	top: -50px;
+	left: 80px;
+	border-radius: 50%;
+	background: white;
+	padding: 30px;
+	border: 2px solid #ccc;
+	transition:all 0.7s ease-in-out 0s;
+}
+.tab4{
+	margin-top: 50px;
+}
+.tab4 h4{
+    margin-top: 130px;
+    text-align: center;
+}
+.tab4 p{
+	text-align: center;
+	
+}
+.totop{
+	position: fixed;
+	background: black;
+	opacity: 0.7;
+	bottom: 0;
+	right: 15px;
+	width: 90px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+.totop:hover{
+	background: #FF4500;
+	opacity: 0.7;
+	transition: all 0.5s;
+}
+.totop span{
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	line-height: 50px;
+	cursor: none;
+}
+
+
+.jumbotron{
+	background:  linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+	margin-top: 50px;
+	color: black;
+	margin-bottom: 0
+}
+.jumbotron h1{
+	font-size: 26px;
+}
+.jumbotron h4{
+	font-size: 16px;
+}
+@media (min-width: 768px) {
+	.tab2-text{
+	float: left;
+}
+.tab2-img{
+	float: right;
+}
+.jumbotron h1{
+	font-size: 30px;
+}
+.jumbotron h4{
+	font-size: 16px;
+}
+}
+@media (min-width: 992px) {
+	.jumbotron h1{
+	font-size: 33px;
+}
+.jumbotron h4{
+	font-size: 17px;
+}
+}
+@media (min-width: 1200px) {
+	.jumbotron h1{
+	font-size: 36px;
+}
+.jumbotron h4{
+	font-size: 18px;
+}
+}
+#information{
+	background-color: #eee;
+	padding: 40px 0;
+}
+#information img{
+	
+	margin: 12px 0;
+}
+.info-content{
+	background-color: #fff;
+	margin-bottom: 15px;
+	box-shadow: 2px 2px 3px #ccc;
+}
+ .info-content h4{
+ 	color: #333;
+ 	padding: 2px 0 0 0;
+ }
+ .info-content p{
+ 	line-height: 1.6
+ }
+ .info-right{
+ 	background: #fff;
+ 	box-shadow: 2px 2px 3px #ccc;
+ }
+.info-right blockquote{
+	margin: 0;
+	padding: 0;
+	display: inline;
+	border: none;
+}
+.info-right blockquote h2{
+	padding: 5px;
+	color: #333;
+	font-size: 20px;
+}
+.info-right h4{
+	font-size: 16px;
+	color: #333;
+}
+.search{
+	margin: 10px 0;
+	position: relative;
+}
+
+.input-group{
+	width: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+article{
+	margin: 20px 0;
+	padding: 15px;
+}
+ .ownclass{
+	background: #999;
+	box-shadow: 5px 5px 5px #ccc;
+	color: white;
+}
+.bothclass{
+	background: #dbd4d4;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.label1{
+	list-style: none;
+}
+.label1 li{
+	float: left;
+	padding: 5px 10px;
+	color: #999;
+	cursor: pointer;
+}
+.label1 li:hover{
+	color: #ff0000;
+}
+.label1::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+hr{
+	margin: 30px 0 35px 0;
+	border: 3px solid #ccc;
+	border-radius: 3px;
+}
+.col-right{
+	padding-left: 20px;
+	border-left: 2px solid #ccc;
+}
+.col-right img{
+	width: 20%;
+	height: 20%;
+	cursor: pointer;
+	transition: all 0.5s ease-out;
+}
+.col-right img:hover{
+	opacity: 0.5;
+}
+.artright{
+	background: #ccc;
+	padding: 20px;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.false{
+	position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+.false:hover{
+	opacity: 0.8;
+}
+.false:hover .caption{
+	opacity: 0.6;
+}
+.false img{
+    
+}
+.false .caption{
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	background: black;
+	opacity: 0;
+	transition: all 0.5s ease-in;
+
+}
+.caption p{
+	font-weight: bold;
+	color: white;
+	line-height:50px;
+}
+
+#case{
+	text-align: center;
+}
+.formclass{
+	margin-bottom: 15px;
+}
+textarea{
+	margin-bottom: 15px;
+}
+.btn{
+	font-size: 16px;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+.tab5 h1{
+	margin: 80px 30px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand logo" >
+				<img src="img/logo.png" alt="" style="height: 50px;">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle='collapse' data-target='#navbar-collapse'>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="blog.html" class="glyphicon glyphicon-home"> Home</a></li>
+				<li><a href="information.html" class="glyphicon glyphicon-list"> About</a></li>
+				<li><a href="case.html" class="glyphicon glyphicon-fire"> Blog</a></li>
+				<li class="active"><a href="about.html" class="glyphicon glyphicon-question-sign"> Contect</a></li>
+			</ul>
+			</div>
+			
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<div class="container">
+			<hgroup>
+				<h1>Blog</h1>
+				<h4>我的个人博客</h4>
+			</hgroup>
+		</div>
+	</div>
+	<div class="tab5">
+		<div class="container">
+		<div class="row">
+			<h1>Contect</h1>
+			<hr>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-xs-12">
+				<h3>Leave Your Message</h3>
+                <div class="row formclass">
+                	<div class="col-md-6">
+                		<span>Your Name</span>
+                		<input type="text" class="form-control">
+                	</div>
+                	<div class="col-md-6">
+                		<span>Your Email</span>
+                		<input type="email" class="form-control">
+                	</div>
+                </div>
+                <span>Your Message:</span>
+                <br>
+                <textarea name="" id="" cols="30" rows="10" class="col-md-12 col-xs-12 "></textarea>
+                <button type="submit" class="btn btn-primary">Seed Message!</button>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target='#myCarousel' data-slide-to='0' class="active"></li>
+			<li data-target='#myCarousel' data-slide-to='1'></li>
+			<li data-target='#myCarousel' data-slide-to='2'></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/latest1.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="img/latest2.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="img/latest3.jpg" alt="">
+			</div>
+		</div>
+		<a href="#myCarousel" data-slide='prev' class="carousel-control left">&lsaquo;</a>
+	<a href="#myCarousel" data-slide='next' class="carousel-control right">&rsaquo;</a>
+	</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<footer id="footer">
+	<div class="container">
+		<p>Design By Jason</p>
+		<p>Power By Bootstrap</p>
+	</div>
+</footer>
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$('#myCarousel').carousel(
+		{
+			interval:4000
+		})
+		$('.carousel-control').css('line-height',$('.carousel-inner img').height()+'px')
+		$(window).resize(function(){
+			var $height=$('.carousel-inner img').eq(0).height()||
+			            $('.carousel-inner img').eq(1).height()||
+			            $('.carousel-inner img').eq(2).height()
+			$('.carousel-control').css('line-height',$height+'px')
+		})
+	})
+	
+
+</script>
+</html>
